@@ -1,0 +1,11 @@
+name: Print Time
+
+on:
+  push:
+
+jobs:
+  show-time:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print current time
+        run: date
