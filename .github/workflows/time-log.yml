@@ -1,0 +1,18 @@
+name: Log Current Time
+
+on:
+  push:
+    paths:
+      - 'time-now.sh'
+      - '.github/workflows/time-log.yml'
+
+jobs:
+  log-time:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run time script
+        run: bash time-now.sh
