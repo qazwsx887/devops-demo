@@ -23,4 +23,6 @@ jobs:
         pip install pytest
 
     - name: Run tests
-      run: python -m pytest tests
+      run: |
+        export PYTHONPATH=$(pwd)  # 显式添加当前目录为模块路径
+        python -m pytest tests
