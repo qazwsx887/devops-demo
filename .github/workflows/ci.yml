@@ -19,10 +19,9 @@ jobs:
 
     - name: Install dependencies
       run: |
+        export PYTHONPATH=$(pwd)  # 显式添加当前目录为模块路径
         pip install -r requirements.txt || true
         pip install pytest
 
     - name: Run tests
-      run: |
-        export PYTHONPATH=$(pwd)  # 显式添加当前目录为模块路径
-        python -m pytest tests
+      run: python -m pytest tests
